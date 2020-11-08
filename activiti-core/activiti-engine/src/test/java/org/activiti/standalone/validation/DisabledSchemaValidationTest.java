@@ -52,7 +52,7 @@ public class DisabledSchemaValidationTest {
     for (Deployment deployment : repositoryService.createDeploymentQuery().list()) {
       repositoryService.deleteDeployment(deployment.getId());
     }
-
+    processEngine.close();
     ProcessEngines.unregister(processEngine);
     processEngine = null;
     repositoryService = null;
